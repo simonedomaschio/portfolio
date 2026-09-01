@@ -1,0 +1,1415 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digitali in Crescita · Siti per ristoranti, pizzerie, parrucchieri, estetisti e artigiani</title>
+<meta name="description" content="Siti su misura per chi lavora con le mani. Da 579 euro, prezzo scritto. Online in due settimane, con un anno di modifiche incluse.">
+<meta name="theme-color" content="#17120E">
+<!-- DEPLOY STEP: patch og:url and og:image with the live absolute URL before zipping -->
+<meta property="og:title" content="Digitali in Crescita · Siti per chi lavora con le mani">
+<meta property="og:description" content="Siti su misura per ristoranti, pizzerie, parrucchieri, estetisti e artigiani. Da 579 euro, prezzo scritto.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://esempio.it/">
+<meta property="og:image" content="https://esempio.it/assets/hero-ending.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23C4703C'/%3E%3Crect x='19' y='36' width='7' height='12' rx='3.5' fill='%23F2E6D8'/%3E%3Crect x='29' y='28' width='7' height='20' rx='3.5' fill='%23F2E6D8'/%3E%3Crect x='39' y='19' width='7' height='29' rx='3.5' fill='%23231F1A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/hero-poster.jpg" media="(min-width:721px) and (orientation:landscape)">
+<link rel="preload" as="image" href="assets/hero-ending.jpg" media="(max-width:720px)">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@500&display=swap" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@500&display=swap"></noscript>
+<style>
+/* ============================================================
+   DIGITALI IN CRESCITA
+   Tokens sampled from the supplied logo and the ember footage.
+   ============================================================ */
+:root{
+  --canvas:#17120E;
+  --canvas-deep:#100C09;
+  --panel:#211A15;
+  --panel-2:#2B221B;
+  --accent:#C4703C;
+  --accent-hover:#D8834C;
+  --accent-muted:#6B3F23;
+  --ember:#E07B33;
+  --wa:#25D366;          /* WhatsApp green: the action colour, used only on WhatsApp buttons */
+  --wa-hover:#3BE07A;
+  --text-primary:#F2E6D8;
+  --text-secondary:#A8988A;
+  --line:#3A2E25;
+  --line-strong:#544234;
+
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:Newsreader,Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.4,0,.2,1);
+
+  --tshadow:0 1px 2px rgba(5,5,10,.95),0 3px 12px rgba(5,5,10,.78),0 10px 44px rgba(5,5,10,.8);
+  --rail:56px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  background:var(--canvas);color:var(--text-primary);
+  font-family:var(--body);font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  animation:pagein .5s var(--ease-soft) both;
+}
+@keyframes pagein{from{opacity:0}to{opacity:1}}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--accent);color:var(--canvas-deep)}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--accent);color:var(--canvas-deep);padding:12px 20px;font-family:var(--mono);font-size:13px}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- the fixed environment layer ---------- */
+.env{position:fixed;inset:0;z-index:0;pointer-events:none}
+.env .glow{position:absolute;inset:-20%;will-change:transform;background:
+   radial-gradient(ellipse 46% 38% at 72% 24%,rgba(224,123,51,.13) 0%,rgba(224,123,51,0) 62%),
+   radial-gradient(ellipse 50% 42% at 22% 78%,rgba(196,112,60,.09) 0%,rgba(196,112,60,0) 64%);
+  animation:drift 96s var(--ease-soft) -22s infinite alternate}
+@keyframes drift{0%{transform:translate3d(-2.5%,1.5%,0) scale(1)}100%{transform:translate3d(3%,-2%,0) scale(1.08)}}
+.env .grain{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.motes{position:absolute;inset:0;overflow:hidden}
+.mote{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--accent-muted);opacity:.5;animation:fall linear infinite}
+@keyframes fall{0%{transform:translate3d(0,-8vh,0);opacity:0}12%{opacity:.55}88%{opacity:.35}100%{transform:translate3d(14px,108vh,0);opacity:0}}
+
+/* ---------- the signature element: the measure rail ---------- */
+.measure{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:20;pointer-events:none;
+  border-right:1px solid var(--line);background:linear-gradient(180deg,rgba(23,18,14,.86),rgba(23,18,14,.62))}
+.measure .track{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);background:var(--line)}
+.measure .fill{position:absolute;left:50%;top:0;width:2px;transform:translateX(-50%);height:0;
+  background:linear-gradient(180deg,var(--accent-muted),var(--ember));box-shadow:0 0 14px rgba(224,123,51,.5)}
+.measure .ticks{position:absolute;left:0;right:0;top:0;bottom:0}
+.measure .tick{position:absolute;left:50%;transform:translateX(-50%);width:11px;height:1px;background:var(--line-strong);opacity:.8}
+.measure .num{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.1em;color:var(--text-secondary);opacity:.5;transition:color .45s var(--ease),opacity .45s var(--ease)}
+.measure .num.on{color:var(--ember);opacity:1}
+.measure .cap{position:absolute;left:50%;bottom:18px;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-secondary);opacity:.42}
+
+/* ---------- the floating WhatsApp button ---------- */
+.fab{position:fixed;right:22px;bottom:22px;z-index:40;display:flex;align-items:center;gap:0;
+  height:58px;padding:0 17px;border-radius:100px;background:var(--wa);color:#08210F;text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.42),0 0 0 6px rgba(37,211,102,.1);
+  opacity:0;transform:translateY(16px) scale(.86);pointer-events:none;
+  transition:opacity .5s var(--ease),transform .5s var(--ease),gap .35s var(--ease),padding .35s var(--ease),background .3s var(--ease)}
+.fab.on{opacity:1;transform:none;pointer-events:auto}
+.fab .wa-ico{width:26px;height:26px}
+.fab-l{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;font-weight:500;
+  max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
+  transition:max-width .4s var(--ease),opacity .3s var(--ease)}
+.fab:hover{background:var(--wa-hover);gap:10px;padding:0 22px 0 18px}
+.fab:hover .fab-l,.fab:focus-visible .fab-l{max-width:120px;opacity:1}
+.fab::after{content:"";position:absolute;inset:-1px;border-radius:100px;border:1px solid var(--wa);
+  opacity:0;pointer-events:none;animation:fabring 3.4s var(--ease-soft) -1s infinite}
+@keyframes fabring{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.34);opacity:0}100%{opacity:0}}
+@media (max-width:720px){.fab{right:16px;bottom:16px;height:54px;padding:0 15px}}
+@media (max-height:520px){.fab{display:none}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:var(--rail);right:0;z-index:30;padding:20px 0;
+  background:linear-gradient(180deg,rgba(16,12,9,.9) 0%,rgba(16,12,9,.55) 55%,rgba(16,12,9,0) 100%);
+  transition:background .5s var(--ease-soft)}
+nav.solid{background:rgba(18,14,11,.97);border-bottom:1px solid var(--line)}
+.nrow{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--display);font-weight:800;
+  font-size:16.5px;letter-spacing:-.025em;color:var(--text-primary)}
+.logo svg{width:30px;height:30px;flex:none}
+.logo .bar{transform-origin:50% 100%;transform:scaleY(.18);transition:transform .8s var(--ease)}
+.logo.drawn .bar{transform:scaleY(1)}
+.logo.drawn .b2{transition-delay:.1s}
+.logo.drawn .b3{transition-delay:.2s}
+.nlinks{display:flex;gap:28px;list-style:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase}
+.nlinks a{color:var(--text-secondary);text-decoration:none;transition:color .3s var(--ease)}
+.nlinks a:hover{color:var(--text-primary)}
+.nbtn{background:var(--accent);color:#241206;padding:11px 20px;border-radius:3px;text-decoration:none;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:500;
+  transition:background .3s var(--ease),transform .3s var(--ease)}
+.nbtn:hover{background:var(--accent-hover);transform:translateY(-1px)}
+
+/* ---------- the scrub hero ---------- */
+.heroTall{position:relative;height:770vh;z-index:1}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--canvas-deep)}
+.stage .poster{position:absolute;inset:0;background-size:cover;background-position:center;
+  transition:opacity .9s var(--ease-soft)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity .9s var(--ease-soft);will-change:transform;transform:translateZ(0)}
+.stage.video-ready video{opacity:1}
+.stage.video-ready .poster{opacity:0}
+.stage.video-failed video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;transform:translateZ(0);
+  background:radial-gradient(ellipse 120% 90% at 62% 45%,rgba(10,8,6,0) 34%,rgba(10,8,6,.6) 100%)}
+.leftscrim{position:absolute;inset:0;pointer-events:none;transform:translateZ(0);background:linear-gradient(90deg,rgba(8,5,4,.74) 0%,rgba(8,5,4,.56) 32%,rgba(8,5,4,.2) 56%,rgba(8,5,4,0) 74%)}
+.topscrim{position:absolute;left:0;right:0;top:0;height:26vh;pointer-events:none;
+  background:linear-gradient(180deg,rgba(12,9,7,.86) 0%,rgba(12,9,7,.34) 52%,rgba(12,9,7,0) 100%)}
+
+.ring{position:absolute;left:calc(var(--rail) + 40px);bottom:44px;width:46px;height:46px;color:var(--accent);
+  transform:rotate(-90deg);transition:opacity .5s var(--ease-soft)}
+.ring circle{transition:stroke-dashoffset .18s linear}
+.stage.video-ready .ring{opacity:0}
+.chev{position:absolute;left:calc(var(--rail) + 40px);bottom:44px;width:24px;height:38px;color:var(--text-secondary);animation:bob 2.6s var(--ease-soft) infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(7px);opacity:1}}
+
+/* bands: text lives in the calm left half, the ember action stays clear on the right */
+.bands{position:absolute;inset:0;display:grid;place-items:start;pointer-events:none}
+.band{grid-area:1/1;position:relative;width:100%;height:100vh;display:flex;align-items:center;opacity:0;
+  padding-left:calc(var(--rail) + 74px);padding-right:40px;text-shadow:var(--tshadow)}
+.band::before{content:"";position:absolute;inset:-4%;pointer-events:none;will-change:opacity;transform:translateZ(0);
+  opacity:calc(.25 + .75*var(--k,1));
+  background:radial-gradient(ellipse 62% 66% at 25% 50%,rgba(6,4,3,var(--sa,.66)) 0%,rgba(6,4,3,calc(var(--sa,.66)*.82)) 48%,rgba(6,4,3,0) 86%)}
+.band .inner{position:relative;max-width:560px}
+.b1{--sa:.70}.b2{--sa:.62}.b3{--sa:.62}.b4{--sa:.66}
+
+.bline{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1.02;text-wrap:balance;
+  font-size:clamp(38px,5vw,72px);max-width:17ch}
+.bmark{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ember);
+  margin-bottom:20px;opacity:calc(var(--k,1));display:block}
+.w{display:inline-block;white-space:pre}
+.c{display:inline-block;will-change:transform,opacity}
+
+/* (a) drift-down, echoing the falling embers */
+.e-drift .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*-26px))}
+/* (b) scatter, echoing the embers gathering */
+.e-scatter .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translate(calc((1 - var(--kc))*var(--jx,0px)),calc((1 - var(--kc))*var(--jy,0px))) rotate(calc((1 - var(--kc))*var(--jr,0deg)))}
+/* (c) blur-to-sharp, echoing the light resolving into columns */
+.e-blur{position:relative}
+.e-blur .soft{position:absolute;inset:0;filter:blur(11px);opacity:calc(1 - var(--k,0));pointer-events:none}
+.e-blur .sharp{opacity:var(--k,0)}
+/* (e) word-by-word rise into a staged settle */
+.e-rise .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*22px))}
+
+.settle .brand{font-family:var(--display);font-weight:800;font-size:clamp(42px,5.4vw,78px);
+  letter-spacing:-.04em;line-height:1;max-width:12ch}
+.settle .sub{font-family:var(--body);font-size:clamp(16px,1.5vw,20px);color:rgba(242,230,216,.86);
+  max-width:40ch;margin-top:20px;line-height:1.6;
+  --ks:clamp(0,(var(--k,0) - .66)*4,1);opacity:var(--ks);transform:translateY(calc((1 - var(--ks))*14px))}
+.settle .row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;pointer-events:auto;
+  --kb:clamp(0,(var(--k,0) - .78)*5,1);opacity:var(--kb);transform:translateY(calc((1 - var(--kb))*14px))}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#241206;
+  padding:16px 28px;border-radius:3px;text-decoration:none;font-family:var(--mono);font-size:12px;
+  letter-spacing:.11em;text-transform:uppercase;font-weight:500;text-shadow:none;border:1px solid var(--accent);
+  transition:background .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);cursor:pointer}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 30px rgba(196,112,60,.26)}
+.btn.wa-on{background:var(--wa);border-color:var(--wa);color:#08210F}
+.btn.wa-on:hover{background:var(--wa-hover);border-color:var(--wa-hover);box-shadow:0 12px 30px rgba(37,211,102,.24)}
+.nbtn.wa-on{background:var(--wa);color:#08210F}
+.nbtn.wa-on:hover{background:var(--wa-hover)}
+.btn.ghost{background:transparent;color:var(--text-primary);border-color:var(--line-strong)}
+.btn.ghost:hover{background:rgba(196,112,60,.1);border-color:var(--accent);box-shadow:none}
+
+/* ---------- the designed static hero (phones, portrait, reduced motion) ---------- */
+.staticHero{display:none;position:relative;min-height:100svh;align-items:flex-end;overflow:hidden;background:var(--canvas-deep)}
+.staticHero .bg{position:absolute;inset:0;background-size:cover;background-position:58% center}
+.staticHero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(12,9,7,.9) 0%,rgba(12,9,7,.42) 34%,rgba(12,9,7,.94) 100%)}
+.staticHero .inner{position:relative;z-index:2;padding:130px 30px 58px calc(var(--rail) + 30px);width:100%;text-shadow:var(--tshadow)}
+.staticHero .t{font-family:var(--display);font-weight:800;font-size:clamp(35px,8.4vw,54px);letter-spacing:-.035em;line-height:1.02;max-width:15ch;text-wrap:balance}
+.staticHero .s{margin-top:18px;color:rgba(242,230,216,.85);max-width:34ch;font-size:16.5px;line-height:1.6}
+.staticHero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* ---------- shared section furniture ---------- */
+main{position:relative;z-index:2;background:var(--canvas)}
+section{position:relative;padding:132px 0;border-top:1px solid var(--line);scroll-margin-top:86px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px 0 calc(var(--rail) + 40px)}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-.035em;max-width:18ch;text-wrap:balance}
+h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.02em;line-height:1.2}
+.lede{color:var(--text-secondary);font-size:18.5px;line-height:1.72;max-width:54ch;margin-top:22px}
+
+/* the self-drawing divider that opens each section */
+.divider{position:absolute;top:-1px;left:0;right:0;height:1px;overflow:visible}
+.divider svg{position:absolute;top:-4px;left:0;width:100%;height:9px;overflow:visible}
+.divider path{stroke:var(--accent-muted);stroke-width:1.4;fill:none;stroke-dasharray:1;stroke-dashoffset:1;
+  transition:stroke-dashoffset 1.5s var(--ease)}
+.divider .dot{position:absolute;right:0;top:-2.5px;width:5px;height:5px;border-radius:50%;
+  background:var(--ember);box-shadow:0 0 10px rgba(224,123,51,.7);opacity:0;transition:opacity .6s var(--ease) 1s}
+section.in .divider path{stroke-dashoffset:0}
+section.in .divider .dot{opacity:1}
+
+/* entrances */
+.up{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+section.in .up{opacity:1;transform:none}
+section.in .up:nth-child(2){transition-delay:.08s}
+section.in .up:nth-child(3){transition-delay:.16s}
+section.in .up:nth-child(4){transition-delay:.24s}
+section.in.done .up,section.in.done .up:nth-child(2),section.in.done .up:nth-child(3),section.in.done .up:nth-child(4){transition-delay:0s !important}
+
+/* ---------- 01 il problema ---------- */
+.problem .grid{display:grid;grid-template-columns:1fr 1fr;gap:74px;align-items:start;margin-top:8px}
+.voices{margin-top:6px}
+.voice{position:relative;padding:24px 26px;border:1px solid var(--line);border-radius:4px;background:var(--panel);
+  font-family:var(--body);font-size:19.5px;color:var(--text-primary);margin-bottom:14px;
+  opacity:0;transform:translateY(20px) rotate(var(--rot,0deg));transition:opacity .8s var(--ease),transform .8s var(--ease)}
+section.in .voice{opacity:1;transform:translateY(0) rotate(var(--rot,0deg))}
+section.in .voice:nth-child(2){transition-delay:.14s}
+section.in .voice:nth-child(3){transition-delay:.28s}
+section.in.done .voice,section.in.done .voice:nth-child(2),section.in.done .voice:nth-child(3){transition-delay:0s !important}
+.voice::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:2px;background:var(--accent-muted)}
+.voice em{font-style:italic;color:var(--text-secondary);font-size:14px;display:block;margin-top:9px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.punch{font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.03em;
+  line-height:1.15;margin-top:40px;max-width:16ch;text-wrap:balance}
+.punch span{color:var(--accent)}
+
+/* ---------- 02 i lavori ---------- */
+.works{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:60px}
+.work{position:relative;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--panel);
+  content-visibility:auto;contain-intrinsic-size:auto 470px;
+  opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease),border-color .45s var(--ease)}
+section.in .work{opacity:1;transform:none}
+section.in .work:nth-child(2){transition-delay:.09s}
+section.in .work:nth-child(3){transition-delay:.18s}
+section.in .work:nth-child(4){transition-delay:.27s}
+section.in .work:nth-child(5){transition-delay:.36s}
+section.in.done .work,section.in.done .work:nth-child(2),section.in.done .work:nth-child(3),section.in.done .work:nth-child(4),section.in.done .work:nth-child(5){transition-delay:0s !important}
+.work:hover{border-color:var(--accent-muted)}
+.work.wide{grid-column:1/-1;contain-intrinsic-size:auto 550px}
+.shot{position:relative;height:320px;overflow:hidden;background:var(--panel-2)}
+.work.wide .shot{height:400px}
+.shot img{width:100%;height:auto;transform:translateY(0);transition:transform 4.6s var(--ease-soft)}
+.work:hover .shot img{transform:translateY(calc(-100% + 320px))}
+.work.wide:hover .shot img{transform:translateY(calc(-100% + 400px))}
+.shot::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(33,26,21,0),rgba(33,26,21,.95))}
+.tagrow{position:absolute;top:14px;right:14px;z-index:2;display:flex;gap:8px}
+.chip{background:rgba(10,7,5,.86);border:1px solid rgba(140,116,96,.34);border-radius:100px;
+  padding:6px 12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-primary);text-shadow:0 1px 3px rgba(5,5,10,.85)}
+.chip.concept{color:var(--ember);border-color:rgba(224,123,51,.4)}
+.wbody{padding:24px 26px 28px}
+.wbody .niche{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
+.wbody p{color:var(--text-secondary);font-size:16.5px;line-height:1.6;margin-top:11px;max-width:46ch}
+
+/* ---------- 03 come funziona ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.step{border:1px solid var(--line);border-radius:5px;background:var(--panel);padding:30px 28px 32px;
+  opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+section.in .step{opacity:1;transform:none}
+section.in .step:nth-child(2){transition-delay:.12s}
+section.in .step:nth-child(3){transition-delay:.24s}
+section.in.done .step,section.in.done .step:nth-child(2),section.in.done .step:nth-child(3){transition-delay:0s !important}
+.step .ill{height:132px;margin-bottom:24px;display:grid;place-items:center}
+.step .ill svg{width:100%;height:100%;overflow:visible}
+.step .ill .st{stroke:var(--accent);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.7s var(--ease)}
+section.in .step .ill .st{stroke-dashoffset:0}
+.step .ill .fillbar{fill:var(--accent-muted);transform-origin:50% 100%;transform:scaleY(0);transition:transform .9s var(--ease) .5s}
+section.in .step .ill .fillbar{transform:scaleY(1)}
+.step .n{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--text-secondary);display:block;margin-bottom:12px}
+.step p{color:var(--text-secondary);font-size:16.5px;line-height:1.62;margin-top:11px}
+
+/* ---------- 04 il prezzo ---------- */
+.price .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:74px;align-items:center}
+.pricetag{font-family:var(--display);font-weight:800;font-size:clamp(66px,9vw,132px);letter-spacing:-.055em;
+  line-height:.88;color:var(--accent);position:relative;display:inline-block}
+.pricetag small{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);
+  display:block;margin-bottom:16px;letter-spacing:.24em}
+.pricetag .glowpad{position:absolute;inset:-30% -18%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(224,123,51,.2) 0%,rgba(224,123,51,0) 68%);opacity:.55;animation:pulse 6.5s var(--ease-soft) -2s infinite alternate}
+@keyframes pulse{0%{opacity:.32}100%{opacity:.78}}
+.incl{margin-top:4px;border-top:1px solid var(--line)}
+.incl li{list-style:none;display:flex;gap:16px;align-items:baseline;padding:17px 0;border-bottom:1px solid var(--line);
+  font-size:17.5px;line-height:1.5}
+.incl li b{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);flex:none;min-width:26px}
+.pnote{margin-top:26px;font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:-.02em;color:var(--text-primary)}
+
+/* the maintenance offer, deliberately quieter than the 579 headline */
+.care{margin-top:78px;border:1px solid var(--line);border-radius:6px;background:var(--panel);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:48px;padding:40px 40px 42px;align-items:center}
+.care-kick{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--text-secondary);display:block;margin-bottom:14px}
+.care-head h3{font-size:29px;letter-spacing:-.03em;margin-bottom:14px}
+.care-head p{color:var(--text-secondary);font-size:16.5px;line-height:1.65;max-width:48ch}
+.care-opts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.care-opt{position:relative;border:1px solid var(--line);border-radius:5px;background:var(--canvas);
+  padding:24px 20px 22px;transition:border-color .35s var(--ease)}
+.care-opt:hover{border-color:var(--line-strong)}
+.care-opt.best{border-color:var(--accent-muted);background:var(--panel-2)}
+.care-opt.best:hover{border-color:var(--accent)}
+.care-l{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-secondary);display:block;margin-bottom:14px}
+.care-n{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.04em;line-height:1;color:var(--text-primary)}
+.care-opt.best .care-n{color:var(--accent)}
+.care-n em{font-style:normal;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-secondary);display:block;margin-top:9px}
+.care-d{color:var(--text-secondary);font-size:15px;line-height:1.55;margin-top:16px}
+.care-badge{position:absolute;top:-10px;right:16px;background:var(--accent);color:#241206;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  padding:5px 10px;border-radius:100px}
+@media (max-width:1080px){.care{grid-template-columns:1fr;gap:32px}}
+@media (max-width:720px){.care{padding:28px 22px 30px;margin-top:52px}.care-opts{grid-template-columns:1fr}}
+
+/* ---------- 05 the interactive moment ---------- */
+.demo{background:var(--canvas-deep)}
+.demo .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.shopwrap{position:relative;border:1px solid var(--line);border-radius:6px;background:var(--panel);
+  padding:34px;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none;cursor:pointer}
+.shopwrap:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.shopwrap svg{width:100%;height:auto;display:block}
+.shop .glass{fill:#171310;transition:fill .25s linear}
+.shop .lit{opacity:calc(var(--h,0));transition:opacity .12s linear}
+.shop .awn{opacity:calc(.28 + .72*var(--h,0));transition:opacity .12s linear}
+.shop .gbar{transform-origin:50% 100%;transform:scaleY(calc(var(--hb,0)));transition:transform .16s var(--ease-soft)}
+.shop .beam{opacity:calc(var(--h,0)*.55)}
+.holdbar{position:relative;height:3px;background:var(--line);border-radius:2px;margin-top:26px;overflow:hidden}
+.holdbar i{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(var(--h,0));
+  background:linear-gradient(90deg,var(--accent-muted),var(--ember));transition:transform .1s linear}
+.holdhint{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-secondary);
+  margin-top:14px;display:block;transition:color .4s var(--ease)}
+.shopwrap.done .holdhint{color:var(--ember)}
+.counter{font-family:var(--display);font-weight:800;font-size:clamp(44px,5.6vw,74px);letter-spacing:-.045em;
+  line-height:1;color:var(--accent);margin-top:6px}
+.counter span{font-size:.42em;color:var(--text-secondary);letter-spacing:-.02em}
+.reveal{opacity:calc(.18 + .82*var(--h,0));transition:opacity .3s var(--ease)}
+.donenote{margin-top:26px;font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.02em;
+  opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.shopwrap.done ~ * .donenote,.demo.hold-done .donenote{opacity:1;transform:none}
+
+/* ---------- 06 faq ---------- */
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 46px 26px 0;position:relative;
+  font-family:var(--display);font-weight:600;font-size:clamp(19px,2vw,23px);letter-spacing:-.02em;
+  transition:color .3s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--accent)}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:13px;height:1.5px;background:var(--accent);
+  transform:translateY(-50%);transition:transform .4s var(--ease)}
+.faq summary::before{content:"";position:absolute;right:8px;top:50%;width:13px;height:1.5px;background:var(--accent);
+  transform:translateY(-50%) rotate(90deg);transition:transform .4s var(--ease)}
+.faq details[open] summary::before{transform:translateY(-50%) rotate(0deg)}
+.faq .ans{padding:0 60px 28px 0;color:var(--text-secondary);font-size:17.5px;line-height:1.72;max-width:62ch}
+.faq .list{margin-top:52px;border-top:1px solid var(--line)}
+
+/* ---------- 07 form ---------- */
+.contact{background:var(--canvas-deep)}
+.contact .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:74px;align-items:start}
+
+.wa{border:1px solid var(--line);border-radius:6px;background:var(--panel);padding:38px 34px 34px;position:relative;overflow:hidden}
+.wa::after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(37,211,102,.10) 0%,rgba(37,211,102,0) 70%)}
+.wa-badge{width:56px;height:56px;border-radius:16px;background:#1F9F4F;color:#fff;display:grid;place-items:center;margin-bottom:22px}
+.wa-badge .wa-ico{width:32px;height:32px}
+.wa h3{font-size:27px;margin-bottom:12px}
+.wa-lede{color:var(--text-secondary);font-size:17px;line-height:1.65;max-width:44ch}
+.wa-btn{margin-top:26px;font-size:13px;padding:18px 30px}
+.wa-ico{width:18px;height:18px;flex:none}
+.wa-btn .wa-ico{width:20px;height:20px}
+.wa-nav .wa-ico{width:15px;height:15px;flex:none;margin-right:2px}
+.nbtn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.wa-num{font-family:var(--mono);font-size:15px;letter-spacing:.14em;color:var(--text-primary);margin-top:18px}
+.wa-quick{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.wa-quick-l{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-secondary);margin-bottom:14px}
+.wa-quick a{display:block;padding:13px 16px;margin-bottom:9px;border:1px solid var(--line);border-radius:4px;
+  color:var(--text-primary);text-decoration:none;font-size:16px;background:var(--canvas);
+  transition:border-color .3s var(--ease),background .3s var(--ease),transform .3s var(--ease)}
+.wa-quick a:hover{border-color:var(--accent);background:var(--panel-2);transform:translateX(3px)}
+.side{border-left:1px solid var(--line);padding-left:36px}
+.side .row{padding:20px 0;border-bottom:1px solid var(--line)}
+.side .row b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-secondary);margin-bottom:8px}
+.side .row span{font-size:17.5px}
+
+/* ---------- footer ---------- */
+footer{background:var(--canvas-deep);border-top:1px solid var(--line);padding:74px 0 44px;position:relative;z-index:2}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:54px}
+footer .logo{margin-bottom:16px}
+footer p{color:var(--text-secondary);font-size:16px;line-height:1.75;max-width:34ch}
+.flinks{list-style:none}
+.flinks li{padding:7px 0}
+.flinks a{color:var(--text-secondary);text-decoration:none;font-size:16px;transition:color .3s var(--ease)}
+.flinks a:hover{color:var(--accent)}
+.fhead{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-primary);margin-bottom:16px;display:block}
+.disclosure{margin-top:52px;padding-top:26px;border-top:1px solid var(--line);color:#7E7166;font-size:14.5px;line-height:1.75;max-width:88ch}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .problem .grid,.price .grid,.demo .grid,.contact .grid{grid-template-columns:1fr;gap:44px}
+  .side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:12px}
+  .works{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step .ill{height:110px}
+}
+@media (max-height:620px){.ring,.chev,.measure .cap{display:none}}
+
+/* ===== the five static-hero gates: these five strings match the JS exactly ===== */
+@media (max-width:720px),
+       (orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse),
+       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
+       (prefers-reduced-motion:reduce){
+  .heroTall{display:none}
+  .staticHero{display:flex}
+}
+
+@media (max-width:720px){
+  :root{--rail:26px}
+  .wrap{padding:0 22px 0 calc(var(--rail) + 22px)}
+  .nrow{padding:0 22px}
+  .nlinks{display:none}
+  .wa-long{display:none}
+  .logo{font-size:14px;gap:8px}
+  .logo svg{width:26px;height:26px}
+  .nbtn{padding:11px 14px;font-size:10px;letter-spacing:.08em}
+  section{padding:88px 0}
+  .frow{grid-template-columns:1fr}
+  .shot{height:250px}
+  .work.wide .shot{height:250px}
+  .work:hover .shot img,.work.wide:hover .shot img{transform:none}
+  .measure .cap{display:none}
+  .fgrid{grid-template-columns:1fr;gap:36px}
+  .side{margin-top:8px}
+  .shopwrap{padding:22px}
+}
+@media (pointer:coarse){
+  .btn,.nbtn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+  .faq summary{padding-top:22px;padding-bottom:22px;min-height:44px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;transition-delay:0s !important}
+  .up,.work,.step,.voice{opacity:1 !important;transform:none !important}
+  .divider path{stroke-dashoffset:0 !important}
+  .step .ill .st{stroke-dashoffset:0 !important}
+  .step .ill .fillbar{transform:scaleY(1) !important}
+  .logo .bar{transform:scaleY(1) !important}
+  .mote{display:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Vai al contenuto</a>
+<h1 class="sr">Digitali in Crescita. Siti per ristoranti, pizzerie, parrucchieri, estetisti e artigiani, da 579 euro.</h1>
+
+<div class="env" aria-hidden="true">
+  <div class="glow"></div>
+  <div class="motes" id="motes"></div>
+  <div class="grain"></div>
+</div>
+
+<a class="fab" id="fab" href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp al 340 662 4943">
+  <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.28.6 4.5 1.73 6.46L3 29l6.72-1.72a12.9 12.9 0 0 0 6.3 1.62h.01c7.16 0 12.98-5.82 12.98-12.99C29.01 8.82 23.19 3 16.02 3Zm0 23.71h-.01c-1.98 0-3.92-.53-5.61-1.53l-.4-.24-4.17 1.07 1.11-4.06-.26-.42a10.7 10.7 0 0 1-1.64-5.71c0-5.95 4.85-10.79 10.8-10.79 2.89 0 5.6 1.13 7.64 3.17a10.7 10.7 0 0 1 3.16 7.63c0 5.95-4.85 10.88-10.62 10.88Zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.29-.22-.61-.38Z"/></svg>
+  <span class="fab-l">Scrivimi</span>
+</a>
+
+<div class="measure" aria-hidden="true">
+  <div class="track"></div>
+  <div class="fill" id="railFill"></div>
+  <div class="ticks" id="railTicks"></div>
+  <span class="cap">Digitali in Crescita</span>
+</div>
+
+<nav id="nav">
+  <div class="nrow">
+    <a class="logo" href="#" id="navlogo" aria-label="Digitali in Crescita, torna in cima">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="32" fill="#C4703C"/>
+        <rect class="bar b1" x="19" y="36" width="7" height="12" rx="3.5" fill="#F2E6D8"/>
+        <rect class="bar b2" x="29" y="28" width="7" height="20" rx="3.5" fill="#F2E6D8"/>
+        <rect class="bar b3" x="39" y="19" width="7" height="29" rx="3.5" fill="#231F1A"/>
+      </svg>
+      Digitali in Crescita
+    </a>
+    <ul class="nlinks">
+      <li><a href="#lavori">I lavori</a></li>
+      <li><a href="#come">Come funziona</a></li>
+      <li><a href="#prezzo">Il prezzo</a></li>
+      <li><a href="#domande">Domande</a></li>
+    </ul>
+    <a class="nbtn wa-nav wa-on" href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.28.6 4.5 1.73 6.46L3 29l6.72-1.72a12.9 12.9 0 0 0 6.3 1.62h.01c7.16 0 12.98-5.82 12.98-12.99C29.01 8.82 23.19 3 16.02 3Zm0 23.71h-.01c-1.98 0-3.92-.53-5.61-1.53l-.4-.24-4.17 1.07 1.11-4.06-.26-.42a10.7 10.7 0 0 1-1.64-5.71c0-5.95 4.85-10.79 10.8-10.79 2.89 0 5.6 1.13 7.64 3.17a10.7 10.7 0 0 1 3.16 7.63c0 5.95-4.85 10.88-10.62 10.88Zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.29-.22-.61-.38Z"/></svg><span class="wa-long">Scrivimi su </span>WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ============ the designed static hero ============ -->
+<header class="staticHero" id="staticHero">
+  <div class="bg" id="staticBg"></div>
+  <div class="inner">
+    <p class="t">Il mestiere ce l'hai già. Manca farsi vedere.</p>
+    <p class="s">Siti per ristoranti, pizzerie, parrucchieri, estetisti e artigiani. Da 579 euro, prezzo scritto.</p>
+    <div class="row">
+      <a class="btn wa-on" href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.28.6 4.5 1.73 6.46L3 29l6.72-1.72a12.9 12.9 0 0 0 6.3 1.62h.01c7.16 0 12.98-5.82 12.98-12.99C29.01 8.82 23.19 3 16.02 3Zm0 23.71h-.01c-1.98 0-3.92-.53-5.61-1.53l-.4-.24-4.17 1.07 1.11-4.06-.26-.42a10.7 10.7 0 0 1-1.64-5.71c0-5.95 4.85-10.79 10.8-10.79 2.89 0 5.6 1.13 7.64 3.17a10.7 10.7 0 0 1 3.16 7.63c0 5.95-4.85 10.88-10.62 10.88Zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.29-.22-.61-.38Z"/></svg>Scrivimi su WhatsApp</a>
+      <a class="btn ghost" href="#lavori">Guarda i lavori</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ the scrub hero ============ -->
+<div class="heroTall" id="heroTall">
+  <div class="stage" id="stage">
+    <div class="poster" id="poster" aria-hidden="true"></div>
+    <video id="hero" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="leftscrim" aria-hidden="true"></div>
+    <div class="topscrim" aria-hidden="true"></div>
+
+    <svg class="ring" id="ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.6"
+              stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/>
+    </svg>
+
+    <div class="bands" id="bands">
+      <div class="band b1" data-a="0" data-b="0.23" data-ent="drift">
+        <div class="inner">
+          <span class="bmark">01 / Digitali in Crescita</span>
+          <p class="bline e-drift" data-split="word">Il mestiere ce l'hai già.</p>
+        </div>
+      </div>
+      <div class="band b2" data-a="0.26" data-b="0.49" data-ent="scatter" data-spread="0.5">
+        <div class="inner">
+          <span class="bmark">02 / Il problema</span>
+          <p class="bline e-scatter" data-split="char">Quello che manca è farsi vedere.</p>
+        </div>
+      </div>
+      <div class="band b3" data-a="0.52" data-b="0.75" data-ent="blur" data-ramp="0.038">
+        <div class="inner">
+          <span class="bmark">03 / La soluzione</span>
+          <p class="bline e-blur">
+            <span class="soft" aria-hidden="true">Siti che fanno squillare il telefono.</span>
+            <span class="sharp">Siti che fanno squillare il telefono.</span>
+          </p>
+        </div>
+      </div>
+      <div class="band b4 settle" data-a="0.78" data-b="1" data-ent="rise">
+        <div class="inner">
+          <span class="bmark">04 / Parliamone</span>
+          <p class="brand e-rise" data-split="word">Digitali in Crescita</p>
+          <p class="sub">Siti per ristoranti, pizzerie, parrucchieri, estetisti e artigiani. Da 579 euro, prezzo scritto.</p>
+          <div class="row">
+            <a class="btn wa-on" href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.28.6 4.5 1.73 6.46L3 29l6.72-1.72a12.9 12.9 0 0 0 6.3 1.62h.01c7.16 0 12.98-5.82 12.98-12.99C29.01 8.82 23.19 3 16.02 3Zm0 23.71h-.01c-1.98 0-3.92-.53-5.61-1.53l-.4-.24-4.17 1.07 1.11-4.06-.26-.42a10.7 10.7 0 0 1-1.64-5.71c0-5.95 4.85-10.79 10.8-10.79 2.89 0 5.6 1.13 7.64 3.17a10.7 10.7 0 0 1 3.16 7.63c0 5.95-4.85 10.88-10.62 10.88Zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.29-.22-.61-.38Z"/></svg>Scrivimi su WhatsApp</a>
+            <a class="btn ghost" href="#lavori">Guarda i lavori</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ 01 il problema ============ -->
+<section class="problem" id="problema">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kick up">01 / Il problema</span>
+        <h2 class="up">Non è che non ti cercano. È che non ti trovano.</h2>
+        <p class="lede up">Sono le frasi che ho sentito più volte, quasi con le stesse parole, da chi ha un locale o un'officina e non ha un sito.</p>
+        <p class="punch up">Il lavoro c'è. <span>La vetrina no.</span></p>
+      </div>
+      <div class="voices">
+        <div class="voice" style="--rot:-.35deg">“Ho solo la pagina Facebook.”<em>Pizzeria, 14 anni di attività</em></div>
+        <div class="voice" style="--rot:.3deg">“Su Google non mi trova nessuno.”<em>Parrucchiera</em></div>
+        <div class="voice" style="--rot:-.2deg">“Il sito me lo ha fatto un amico e poi è rimasto lì.”<em>Officina meccanica</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 i lavori ============ -->
+<section id="lavori">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <span class="kick up">02 / I lavori</span>
+    <h2 class="up">Cinque mestieri, cinque vetrine.</h2>
+    <p class="lede up">Ogni scheda è una pagina vera, costruita e fotografata. Le trovi marcate come concept: sono progetti miei, non lavori di clienti. Passa il mouse sopra e la pagina scorre.</p>
+
+    <div class="works">
+      <article class="work wide">
+        <div class="shot">
+          <div class="tagrow"><span class="chip">Pizzeria</span><span class="chip concept">Concept</span></div>
+          <img src="assets/work-forno-vecchio.webp" alt="La pagina del concept Forno Vecchio, una pizzeria napoletana" loading="lazy" decoding="async">
+        </div>
+        <div class="wbody">
+          <span class="niche">Pizzeria</span>
+          <h3>Forno Vecchio</h3>
+          <p>Il menù cambia, il sito no. Qui si aggiorna in trenta secondi.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="shot">
+          <div class="tagrow"><span class="chip">Ristorante</span><span class="chip concept">Concept</span></div>
+          <img src="assets/work-osteria-del-ponte.webp" alt="La pagina del concept Osteria del Ponte, un ristorante di cucina di casa" loading="lazy" decoding="async">
+        </div>
+        <div class="wbody">
+          <span class="niche">Ristorante</span>
+          <h3>Osteria del Ponte</h3>
+          <p>Prenotare senza telefonare, anche alle undici di sera.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="shot">
+          <div class="tagrow"><span class="chip">Parrucchiere</span><span class="chip concept">Concept</span></div>
+          <img src="assets/work-salone-marta.webp" alt="La pagina del concept Salone Marta, un parrucchiere" loading="lazy" decoding="async">
+        </div>
+        <div class="wbody">
+          <span class="niche">Parrucchiere</span>
+          <h3>Salone Marta</h3>
+          <p>Il taglio si sceglie prima di entrare.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="shot">
+          <div class="tagrow"><span class="chip">Estetista</span><span class="chip concept">Concept</span></div>
+          <img src="assets/work-studio-lume.webp" alt="La pagina del concept Studio Lume, un centro estetico" loading="lazy" decoding="async">
+        </div>
+        <div class="wbody">
+          <span class="niche">Estetista</span>
+          <h3>Studio Lume</h3>
+          <p>I trattamenti spiegati bene valgono il doppio.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="shot">
+          <div class="tagrow"><span class="chip">Artigiano</span><span class="chip concept">Concept</span></div>
+          <img src="assets/work-ferri-e-figli.webp" alt="La pagina del concept Ferri e Figli, idraulica e meccanica" loading="lazy" decoding="async">
+        </div>
+        <div class="wbody">
+          <span class="niche">Idraulico e meccanico</span>
+          <h3>Ferri &amp; Figli</h3>
+          <p>Chi ha un tubo rotto non legge. Chiama.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 come funziona ============ -->
+<section id="come">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <span class="kick up">03 / Come funziona</span>
+    <h2 class="up">Tre passaggi. Nessuna sorpresa.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="ill" aria-hidden="true">
+          <svg viewBox="0 0 200 120">
+            <path class="st" d="M18 20 H112 a8 8 0 0 1 8 8 V70 a8 8 0 0 1 -8 8 H52 L34 96 V78 H26 a8 8 0 0 1 -8 -8 V28 a8 8 0 0 1 8 -8 Z"/>
+            <path class="st" d="M136 44 H176 a6 6 0 0 1 6 6 V84 a6 6 0 0 1 -6 6 H160 L146 104 V90 H142 a6 6 0 0 1 -6 -6 V50 a6 6 0 0 1 6 -6 Z"/>
+            <path class="st" d="M38 40 H98 M38 54 H80"/>
+          </svg>
+        </div>
+        <span class="n">01</span>
+        <h3>Parliamo mezz'ora</h3>
+        <p>Mi racconti il locale e cosa ti serve. Gratis, senza impegno.</p>
+      </div>
+
+      <div class="step">
+        <div class="ill" aria-hidden="true">
+          <svg viewBox="0 0 200 120">
+            <path class="st" d="M52 12 H132 a6 6 0 0 1 6 6 V102 a6 6 0 0 1 -6 6 H52 a6 6 0 0 1 -6 -6 V18 a6 6 0 0 1 6 -6 Z"/>
+            <path class="st" d="M66 36 H118 M66 50 H104 M66 64 H112"/>
+            <path class="st" d="M66 86 H100"/>
+            <rect class="fillbar" x="104" y="78" width="18" height="14" rx="3"/>
+            <path class="st" d="M150 60 l10 10 l22 -26"/>
+          </svg>
+        </div>
+        <span class="n">02</span>
+        <h3>Ti mando il preventivo scritto</h3>
+        <p>Entro ventiquattro ore, con il prezzo finale. Quello resta.</p>
+      </div>
+
+      <div class="step">
+        <div class="ill" aria-hidden="true">
+          <svg viewBox="0 0 200 120">
+            <path class="st" d="M22 18 H178 a6 6 0 0 1 6 6 V96 a6 6 0 0 1 -6 6 H22 a6 6 0 0 1 -6 -6 V24 a6 6 0 0 1 6 -6 Z"/>
+            <path class="st" d="M16 38 H184"/>
+            <circle class="st" cx="32" cy="28" r="3"/><circle class="st" cx="44" cy="28" r="3"/><circle class="st" cx="56" cy="28" r="3"/>
+            <rect class="fillbar" x="62" y="74" width="16" height="16" rx="3"/>
+            <rect class="fillbar" x="90" y="62" width="16" height="28" rx="3" style="transition-delay:.62s"/>
+            <rect class="fillbar" x="118" y="50" width="16" height="40" rx="3" style="transition-delay:.74s"/>
+          </svg>
+        </div>
+        <span class="n">03</span>
+        <h3>Il sito va online</h3>
+        <p>In due settimane. Poi due modifiche sono comprese, e se vuoi te lo seguo tutto l'anno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 il prezzo ============ -->
+<section class="price" id="prezzo">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kick up">04 / Il prezzo</span>
+        <div class="up">
+          <span class="pricetag"><small>A partire da</small>579 €<span class="glowpad" aria-hidden="true"></span></span>
+        </div>
+        <p class="lede up">L'ho scritto perché nessuno lo scrive. Sai quanto spendi prima di sentirmi.</p>
+        <p class="pnote up">Se serve di più, te lo dico prima. Mai dopo.</p>
+      </div>
+      <div>
+        <ul class="incl up">
+          <li><b>01</b><span>Sito completo, scritto e disegnato su misura</span></li>
+          <li><b>02</b><span>Si vede bene dal telefono, sempre</span></li>
+          <li><b>03</b><span>Trovabile su Google con il nome del tuo paese</span></li>
+          <li><b>04</b><span>Menù, listino o servizi, aggiornabili</span></li>
+          <li><b>05</b><span>Due modifiche incluse</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="care up">
+      <div class="care-head">
+        <span class="care-kick">Se poi vuoi</span>
+        <h3>Te lo seguo io, tutto l'anno.</h3>
+        <p>Il sito è tuo e resta online comunque, anche senza. La manutenzione è per chi non vuole pensarci: mi scrivi quando c'è da cambiare qualcosa e lo cambio, tengo aggiornata la parte tecnica, e controllo che giri tutto.</p>
+      </div>
+      <div class="care-opts">
+        <div class="care-opt">
+          <span class="care-l">Mese per mese</span>
+          <p class="care-n">50 <em>€ al mese</em></p>
+          <p class="care-d">Si disdice quando vuoi, senza spiegazioni.</p>
+        </div>
+        <div class="care-opt best">
+          <span class="care-badge">20% in meno</span>
+          <span class="care-l">Un anno subito</span>
+          <p class="care-n">480 <em>€ l'anno</em></p>
+          <p class="care-d">Invece di 600. Risparmi 120 euro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 the interactive moment ============ -->
+<section class="demo" id="prova">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kick up">05 / Prova</span>
+        <h2 class="up">Tieni premuto.</h2>
+        <p class="lede up">Tieni premuto sulla vetrina e guarda cosa cambia. È tutto qui quello che faccio: la stessa attività, accesa.</p>
+        <div class="counter reveal" id="counterWrap"><span id="counter">0</span> <span>persone ti hanno trovato questa settimana</span></div>
+        <p class="donenote" id="doneNote">Ecco. È tutto qui il lavoro che faccio.</p>
+      </div>
+
+      <div class="shopwrap" id="shop" role="button" tabindex="0" aria-label="Tieni premuto per accendere la vetrina">
+        <svg class="shop" viewBox="0 0 400 260" aria-hidden="true">
+          <defs>
+            <linearGradient id="beamg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E07B33" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#E07B33" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- ground -->
+          <path d="M0 236 H400" stroke="#3A2E25" stroke-width="1.5"/>
+          <!-- facade -->
+          <rect x="56" y="52" width="288" height="184" fill="#211A15" stroke="#3A2E25" stroke-width="1.5"/>
+          <!-- light spill on the pavement -->
+          <path class="beam" d="M96 236 L128 148 H272 L304 236 Z" fill="url(#beamg)"/>
+          <!-- window -->
+          <rect class="glass" x="92" y="120" width="140" height="96" stroke="#3A2E25" stroke-width="1.5"/>
+          <rect class="lit" x="92" y="120" width="140" height="96" fill="#E07B33" opacity="0"/>
+          <rect class="lit" x="92" y="120" width="140" height="96" fill="#F2E6D8" opacity="0" style="mix-blend-mode:overlay"/>
+          <path d="M162 120 V216 M92 168 H232" stroke="#3A2E25" stroke-width="1.5"/>
+          <!-- door -->
+          <rect x="256" y="140" width="60" height="96" fill="#191410" stroke="#3A2E25" stroke-width="1.5"/>
+          <circle cx="266" cy="190" r="2.5" fill="#6B3F23"/>
+          <!-- awning -->
+          <path class="awn" d="M76 108 H324 L308 76 H92 Z" fill="#C4703C" opacity=".28"/>
+          <path d="M76 108 H324 L308 76 H92 Z" fill="none" stroke="#3A2E25" stroke-width="1.5"/>
+          <!-- the growth mark rising above the shop -->
+          <rect class="gbar" x="150" y="20" width="14" height="24" rx="7" fill="#F2E6D8"/>
+          <rect class="gbar" x="186" y="10" width="14" height="34" rx="7" fill="#E07B33" style="transition-delay:.05s"/>
+          <rect class="gbar" x="222" y="0" width="14" height="44" rx="7" fill="#C4703C" style="transition-delay:.1s"/>
+        </svg>
+        <div class="holdbar" aria-hidden="true"><i></i></div>
+        <span class="holdhint" id="holdHint">Tieni premuto per accendere</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 le domande ============ -->
+<section class="faq" id="domande">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <span class="kick up">06 / Le domande</span>
+    <h2 class="up">Quelle che mi fanno sempre.</h2>
+    <div class="list up">
+      <details>
+        <summary>Quanto ci vuole?</summary>
+        <div class="ans">Due settimane dal sì. Se hai fretta lo dici e ci si organizza.</div>
+      </details>
+      <details>
+        <summary>Poi chi lo aggiorna?</summary>
+        <div class="ans">Io. Mi scrivi un messaggio con quello che vuoi cambiare e lo cambio. Nel prezzo ci sono due modifiche. Se vuoi che me ne occupi tutto l'anno c'è la manutenzione, cinquanta euro al mese.</div>
+      </details>
+      <details>
+        <summary>Io col computer non sono capace.</summary>
+        <div class="ans">Non serve che lo sia. Non devi toccare niente.</div>
+      </details>
+      <details>
+        <summary>Non ho le foto.</summary>
+        <div class="ans">Le facciamo. Oppure le disegno io, e sul sito c'è scritto che sono immagini fatte al computer. Onesto e bello si tengono.</div>
+      </details>
+      <details>
+        <summary>Ho già Instagram, mi basta?</summary>
+        <div class="ans">Instagram lo trova chi ti segue già. Google ti trova chi non ti conosce ancora. Servono tutti e due.</div>
+      </details>
+      <details>
+        <summary>E se poi non mi porta clienti?</summary>
+        <div class="ans">Un sito non fa miracoli da solo. Fa in modo che chi ti cerca ti trovi e ti chiami. Il resto lo fai tu, come lo fai già.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 parliamone ============ -->
+<section class="contact" id="preventivo">
+  <div class="divider" aria-hidden="true"><svg preserveAspectRatio="none" viewBox="0 0 100 9"><path d="M0 4.5 H100"/></svg><i class="dot"></i></div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kick up">07 / Parliamone</span>
+        <h2 class="up">Mezz'ora e sai già quanto costa.</h2>
+        <p class="lede up">Scrivimi su WhatsApp cosa fai e dove. Ti rispondo entro ventiquattro ore con il prezzo.</p>
+        <div class="side up">
+          <div class="row"><b>WhatsApp</b><span>340 662 4943</span></div>
+          <div class="row"><b>Risposta</b><span>Entro 24 ore, prezzo compreso</span></div>
+          <div class="row"><b>Il primo consulto</b><span>Gratis, mezz'ora, senza impegno</span></div>
+        </div>
+      </div>
+
+      <div class="up">
+        <div class="wa">
+          <span class="wa-badge" aria-hidden="true"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.28.6 4.5 1.73 6.46L3 29l6.72-1.72a12.9 12.9 0 0 0 6.3 1.62h.01c7.16 0 12.98-5.82 12.98-12.99C29.01 8.82 23.19 3 16.02 3Zm0 23.71h-.01c-1.98 0-3.92-.53-5.61-1.53l-.4-.24-4.17 1.07 1.11-4.06-.26-.42a10.7 10.7 0 0 1-1.64-5.71c0-5.95 4.85-10.79 10.8-10.79 2.89 0 5.6 1.13 7.64 3.17a10.7 10.7 0 0 1 3.16 7.63c0 5.95-4.85 10.88-10.62 10.88Zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.29-.22-.61-.38Z"/></svg></span>
+          <h3>Scrivimi su WhatsApp</h3>
+          <p class="wa-lede">È il modo più veloce. Mi dici che lavoro fai e dove sei, e ti rispondo con il prezzo. Niente moduli da compilare, niente email da aspettare.</p>
+          <a class="btn wa-on wa-btn" href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp al 340 662 4943"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C8.85 3 3.03 8.82 3.03 15.99c0 2.28.6 4.5 1.73 6.46L3 29l6.72-1.72a12.9 12.9 0 0 0 6.3 1.62h.01c7.16 0 12.98-5.82 12.98-12.99C29.01 8.82 23.19 3 16.02 3Zm0 23.71h-.01c-1.98 0-3.92-.53-5.61-1.53l-.4-.24-4.17 1.07 1.11-4.06-.26-.42a10.7 10.7 0 0 1-1.64-5.71c0-5.95 4.85-10.79 10.8-10.79 2.89 0 5.6 1.13 7.64 3.17a10.7 10.7 0 0 1 3.16 7.63c0 5.95-4.85 10.88-10.62 10.88Zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.29-.22-.61-.38Z"/></svg>Scrivimi su WhatsApp</a>
+          <p class="wa-num">340 662 4943</p>
+          <div class="wa-quick">
+            <span class="wa-quick-l">Oppure parti da qui</span>
+            <a href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20un%20ristorante%20e%20vorrei%20qualche%20informazione%20sul%20sito." target="_blank" rel="noopener">Ho un ristorante o una pizzeria</a>
+            <a href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20un%20salone%20e%20vorrei%20qualche%20informazione%20sul%20sito." target="_blank" rel="noopener">Ho un salone o un centro estetico</a>
+            <a href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20sono%20un%20artigiano%20e%20vorrei%20qualche%20informazione%20sul%20sito." target="_blank" rel="noopener">Sono un artigiano</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#" aria-label="Digitali in Crescita">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="32" fill="#C4703C"/>
+            <rect class="bar b1" x="19" y="36" width="7" height="12" rx="3.5" fill="#F2E6D8"/>
+            <rect class="bar b2" x="29" y="28" width="7" height="20" rx="3.5" fill="#F2E6D8"/>
+            <rect class="bar b3" x="39" y="19" width="7" height="29" rx="3.5" fill="#231F1A"/>
+          </svg>
+          Digitali in Crescita
+        </a>
+        <p>Siti per chi lavora con le mani.</p>
+      </div>
+      <div>
+        <span class="fhead">I mestieri</span>
+        <ul class="flinks">
+          <li><a href="#lavori">Ristoranti</a></li>
+          <li><a href="#lavori">Pizzerie</a></li>
+          <li><a href="#lavori">Parrucchieri</a></li>
+          <li><a href="#lavori">Estetisti</a></li>
+          <li><a href="#lavori">Artigiani</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="fhead">Contatti</span>
+        <ul class="flinks">
+          <li><a href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener">Scrivimi su WhatsApp</a></li>
+          <li><a href="https://wa.me/393406624943?text=Ciao%20Simone%2C%20ho%20visto%20il%20tuo%20sito%20e%20vorrei%20qualche%20informazione." target="_blank" rel="noopener">340 662 4943</a></li>
+          <li><a href="#prezzo">Il prezzo</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclosure">Le cinque schede del portfolio sono progetti concept, non lavori commissionati. Le immagini dei siti sono fotografie di pagine reali che ho costruito. Le fotografie dentro quelle pagine sono immagini fatte al computer.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   0. shared helpers
+   ============================================================ */
+var clamp=function(v,lo,hi){return Math.min(hi,Math.max(lo,v));};
+var smoothstep=function(p,e0,e1){var t=clamp((p-e0)/(e1-e0),0,1);return t*t*(3-2*t);};
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+
+var VIDEO_URL='assets/hero-scrub.mp4';
+var VIDEO_BYTES=2505972;
+var POSTER='assets/hero-poster.jpg';
+var ENDING='assets/hero-ending.jpg';
+var RAMP=0.0299;             /* 20vh of the 670vh scroll range */
+
+var stage=document.getElementById('stage');
+var video=document.getElementById('hero');
+var poster=document.getElementById('poster');
+var ring=document.getElementById('ring');
+var heroTall=document.getElementById('heroTall');
+var bandEls=[].slice.call(document.querySelectorAll('.band'));
+var reduce=matchMedia('(prefers-reduced-motion: reduce)');
+
+document.getElementById('staticBg').style.backgroundImage="url('"+ENDING+"')";
+/* the page fades in from CSS alone, so nothing waits on this script */
+
+/* ============================================================
+   1. drifting motes in the fixed environment layer
+   ============================================================ */
+(function(){
+  if(reduce.matches) return;
+  var host=document.getElementById('motes'),r=rng(20260901),html='';
+  for(var i=0;i<26;i++){
+    var dur=(16+r()*22).toFixed(1), delay=(-r()*38).toFixed(1),
+        left=(r()*100).toFixed(2), size=(2+r()*2.6).toFixed(1), op=(.22+r()*.4).toFixed(2);
+    html+='<i class="mote" style="left:'+left+'%;width:'+size+'px;height:'+size+'px;opacity:'+op+
+          ';animation-duration:'+dur+'s;animation-delay:'+delay+'s"></i>';
+  }
+  host.innerHTML=html;
+})();
+
+/* ============================================================
+   2. the measure rail (the signature element)
+   ============================================================ */
+var railFill=document.getElementById('railFill');
+(function(){
+  var t=document.getElementById('railTicks'),html='';
+  for(var i=0;i<=40;i++){
+    var pct=(i/40*100);
+    html+='<span class="tick" style="top:'+pct.toFixed(2)+'%"></span>';
+  }
+  var labels=['01','02','03','04','05','06','07'];
+  for(var j=0;j<labels.length;j++){
+    html+='<span class="num" data-n="'+j+'" style="top:'+(9+j*12.6).toFixed(1)+'%">'+labels[j]+'</span>';
+  }
+  t.innerHTML=html;
+})();
+var railNums=[].slice.call(document.querySelectorAll('.measure .num'));
+var lastRail=-1,lastRailAt=0;
+function updateRail(now){
+  var p=clamp(scrollY/geo.max,0,1);
+  var pct=Math.round(p*1000)/10;
+  if(pct!==lastRail){lastRail=pct;railFill.style.height=pct+'%';}
+  if(now-lastRailAt>140){
+    lastRailAt=now;
+    var idx=Math.floor(p*railNums.length);
+    for(var i=0;i<railNums.length;i++){
+      var on=i<=idx;
+      if(railNums[i]._on!==on){railNums[i]._on=on;railNums[i].classList.toggle('on',on);}
+    }
+  }
+}
+
+/* ============================================================
+   3. split the hero headlines once, with a seeded generator
+   ============================================================ */
+function splitLine(el,mode,spread){
+  var text=el.textContent.trim();
+  var r=rng(1337+text.length);
+  var sr=document.createElement('span');
+  sr.className='sr';sr.textContent=text;
+  var vis=document.createElement('span');
+  vis.setAttribute('aria-hidden','true');
+  var words=text.split(' ');
+  var total=text.replace(/ /g,'').length,ci=0;
+  for(var w=0;w<words.length;w++){
+    var ws=document.createElement('span');ws.className='w';
+    if(mode==='word'){
+      ws.style.setProperty('--th',(w/words.length*0.55).toFixed(3));
+      ws.textContent=words[w]+(w<words.length-1?' ':'');
+    }else{
+      for(var c=0;c<words[c!==undefined?w:w].length;c++){
+        var cs=document.createElement('span');cs.className='c';
+        cs.textContent=words[w][c];
+        cs.style.setProperty('--th',clamp(ci/total*(spread||0.5)+r()*0.06,0,0.62).toFixed(3));
+        cs.style.setProperty('--jx',((r()-0.5)*54).toFixed(1)+'px');
+        cs.style.setProperty('--jy',((r()-0.5)*46).toFixed(1)+'px');
+        cs.style.setProperty('--jr',((r()-0.5)*24).toFixed(1)+'deg');
+        ws.appendChild(cs);ci++;
+      }
+      if(w<words.length-1){
+        var sp=document.createElement('span');sp.className='c';sp.textContent=' ';ws.appendChild(sp);
+      }
+    }
+    vis.appendChild(ws);
+  }
+  el.textContent='';el.appendChild(sr);el.appendChild(vis);
+}
+[].slice.call(document.querySelectorAll('[data-split]')).forEach(function(el){
+  var band=el.closest('.band');
+  splitLine(el,el.getAttribute('data-split'),parseFloat(band&&band.getAttribute('data-spread'))||0.5);
+});
+
+/* ============================================================
+   4. the band model
+   ============================================================ */
+var bands=bandEls.map(function(el){
+  return {
+    el:el,
+    a:parseFloat(el.getAttribute('data-a')),
+    b:parseFloat(el.getAttribute('data-b')),
+    ramp:parseFloat(el.getAttribute('data-ramp'))||0,
+    first:el.classList.contains('b1'),
+    last:el.getAttribute('data-b')==='1',
+    op:-1,k:-1
+  };
+});
+
+var loadK=0,loadStart=0;
+function updateCaptions(p,now){
+  for(var i=0;i<bands.length;i++){
+    var B=bands[i],a=B.a,b=B.b;
+    var f=Math.min(RAMP,(b-a)/3);
+    var inRamp=B.first?1:smoothstep(p,a,a+f);
+    var outRamp=B.last?1:(1-smoothstep(p,b-f,b));
+    var op=inRamp*outRamp;
+    var ramp=B.ramp||Math.min(0.045,(b-a)*0.35);
+    var k=clamp((p-a)/ramp,0,1);
+    if(B.first) k=Math.max(k,loadK);
+    if(Math.abs(op-B.op)>0.004){B.op=op;B.el.style.opacity=op.toFixed(3);}
+    if(Math.abs(k-B.k)>0.008){B.k=k;B.el.style.setProperty('--k',k.toFixed(3));}
+  }
+}
+
+/* ============================================================
+   5. gated seeks (deadlock safe)
+   ============================================================ */
+var seekBusy=false,pendingTime=null,seekAt=0;
+var FRAME_DUR=1/30;          /* the hero runs at 30fps */
+var SEEK_TIMEOUT=16;         /* a seek that never reports back may not stall the scrub */
+
+function releaseSeek(){
+  if(!seekBusy)return;
+  seekBusy=false;
+  if(pendingTime!==null){var t=pendingTime;pendingTime=null;requestSeek(t);}
+}
+function requestSeek(t){
+  if(!video.duration||isNaN(video.duration))return;
+  t=clamp(t,0,video.duration-0.001);
+  if(seekBusy){
+    pendingTime=t;
+    if(performance.now()-seekAt<SEEK_TIMEOUT)return;   /* still fresh: let it land */
+    seekBusy=false;pendingTime=null;                   /* stalled: take the newest and move on */
+  }
+  if(Math.abs(t-video.currentTime)<FRAME_DUR*0.5)return; /* already showing this frame */
+  seekBusy=true;seekAt=performance.now();
+  video.currentTime=t;
+}
+video.addEventListener('seeked',releaseSeek);
+/* the frame is only truly on screen when the compositor says so */
+if(video.requestVideoFrameCallback){
+  var onPresented=function(){releaseSeek();video.requestVideoFrameCallback(onPresented);};
+  video.requestVideoFrameCallback(onPresented);
+}
+video.addEventListener('error',function(){seekBusy=false;pendingTime=null;failVideo();});
+
+/* ============================================================
+   6. the dt-normalized lerp loop that rests
+   ============================================================ */
+var target=0,shown=0,rafId=null,lastTick=0,heroOnScreen=true;
+var geo={top:0,range:1,max:1};
+function measureGeo(){
+  geo.top=heroTall?heroTall.offsetTop:0;
+  geo.range=heroTall?Math.max(1,heroTall.offsetHeight-innerHeight):1;
+  geo.max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
+}
+function heroProgress(){
+  if(!heroTall)return 0;
+  return clamp((scrollY-geo.top)/geo.range,0,1);
+}
+function tick(now){
+  var dt=Math.min(100,now-(lastTick||now));
+  lastTick=now;
+  var k=0.55;   // tighter: the image tracks the scroll instead of trailing it
+  shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
+  if(loadK<1&&loadStart){
+    loadK=clamp((now-loadStart)/900,0,1);
+  }
+  var settled=Math.abs(target-shown)<0.0005&&loadK>=1;
+  if(settled){shown=target;rafId=null;lastTick=0;}
+  else{rafId=requestAnimationFrame(tick);}
+  if(video.duration)requestSeek(shown*video.duration);
+  updateCaptions(shown,now);
+  updateRail(now);
+}
+function onScroll(){
+  target=heroProgress();
+  if(rafId===null&&heroOnScreen)rafId=requestAnimationFrame(tick);
+  if(rafId===null)updateRail(performance.now());
+}
+addEventListener('scroll',function(){if(!scrubOn)updateRail(performance.now());},{passive:true});
+
+if('IntersectionObserver' in window && heroTall){
+  new IntersectionObserver(function(es){
+    heroOnScreen=es[0].isIntersecting;
+    if(heroOnScreen&&scrubOn&&rafId===null)rafId=requestAnimationFrame(tick);
+  },{rootMargin:'120px'}).observe(heroTall);
+}
+
+/* ============================================================
+   7. the streamed Blob loader with an honest ring
+   ============================================================ */
+var heroInited=false;
+function initHeroOnce(){
+  if(heroInited)return;heroInited=true;
+  poster.style.backgroundImage="url('"+POSTER+"')";
+  loadStart=performance.now();
+  var started=false;
+  function startBlobFetch(){
+    if(started)return;started=true;
+    loadHeroBlob().catch(failVideo);
+  }
+  var img=new Image();
+  img.onload=startBlobFetch;img.onerror=startBlobFetch;img.src=POSTER;
+  setTimeout(startBlobFetch,4000);
+}
+function loadHeroBlob(){
+  var ctrl=new AbortController();
+  var watchdog=setTimeout(function(){ctrl.abort();},20000);
+  return fetch(VIDEO_URL,{priority:'low',signal:ctrl.signal}).then(function(res){
+    if(!res.ok||!res.body)throw new Error('no body');
+    var total=Number(res.headers.get('Content-Length'))||VIDEO_BYTES;
+    var reader=res.body.getReader(),chunks=[],got=0,lastRing=0;
+    function pump(){
+      return reader.read().then(function(r){
+        if(r.done)return;
+        clearTimeout(watchdog);
+        watchdog=setTimeout(function(){ctrl.abort();},20000);
+        chunks.push(r.value);got+=r.value.length;
+        var frac=Math.min(1,got/total),now=performance.now();
+        if(now-lastRing>100||frac===1){
+          lastRing=now;
+          ring.style.setProperty('--ld',Math.round(126*(1-frac)));
+        }
+        return pump();
+      });
+    }
+    return pump().then(function(){
+      clearTimeout(watchdog);
+      ring.style.setProperty('--ld',0);
+      var objUrl=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
+      addEventListener('pagehide',function(){URL.revokeObjectURL(objUrl);});
+      video.src=objUrl;
+      video.load();
+      video.addEventListener('canplay',function(){
+        requestSeek(heroProgress()*video.duration);
+        stage.classList.add('video-ready');
+      },{once:true});
+    });
+  });
+}
+var failed=false;
+function failVideo(){
+  if(failed)return;failed=true;
+  if(ring&&ring.parentNode){
+    var ch=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    ch.setAttribute('class','chev');ch.setAttribute('viewBox','0 0 24 38');ch.setAttribute('aria-hidden','true');
+    ch.innerHTML='<path d="M4 12 L12 21 L20 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'+
+                 '<path d="M4 22 L12 31 L20 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5"/>';
+    ring.replaceWith(ch);
+  }
+  stage.classList.add('video-failed');
+}
+
+/* ============================================================
+   8. the five static-hero gates, live in both directions
+   ============================================================ */
+var GATES=[
+  '(max-width: 720px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  '(prefers-reduced-motion: reduce)'
+];
+var scrubOn=false;
+function enableScrub(){
+  if(scrubOn)return;scrubOn=true;
+  initHeroOnce();
+  addEventListener('scroll',onScroll,{passive:true});
+  bands.forEach(function(b){b.op=-1;b.k=-1;});
+  unpinFinalStates();
+  updateCaptions(heroProgress(),performance.now());
+  onScroll();
+}
+function disableScrub(){
+  if(!scrubOn)return;scrubOn=false;
+  removeEventListener('scroll',onScroll);
+  if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}
+}
+function applyHeroMode(){
+  var hit=GATES.some(function(q){return matchMedia(q).matches;});
+  if(hit)disableScrub();else enableScrub();
+}
+var MQLS=GATES.map(function(q){return matchMedia(q);});
+MQLS.forEach(function(m){m.addEventListener('change',applyHeroMode);});
+
+/* ============================================================
+   9. section entrances, retired after they play
+   ============================================================ */
+var sections=[].slice.call(document.querySelectorAll('section'));
+if('IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        setTimeout(function(){e.target.classList.add('done');},1400);
+        so.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  sections.forEach(function(s){
+    var d=s.querySelector('.divider path');
+    if(d){var L=d.getTotalLength?d.getTotalLength():100;d.style.strokeDasharray=L;d.style.strokeDashoffset=L;}
+    so.observe(s);
+  });
+}else{
+  sections.forEach(function(s){s.classList.add('in','done');});
+}
+setTimeout(function(){document.getElementById('navlogo').classList.add('drawn');},420);
+[].slice.call(document.querySelectorAll('footer .logo')).forEach(function(l){
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      if(es[0].isIntersecting)l.classList.add('drawn');
+    },{threshold:.4}).observe(l);
+  }else l.classList.add('drawn');
+});
+
+/* nav solidifies once the hero is behind us */
+var navEl=document.getElementById('nav'),navSolid=false;
+var fabEl=document.getElementById('fab'),fabOn=false;
+addEventListener('scroll',function(){
+  var want=scrollY>innerHeight*0.6;
+  if(want!==navSolid){navSolid=want;navEl.classList.toggle('solid',want);}
+  if(fabEl){var mainEl=document.getElementById('main');
+    var showFab=mainEl?(scrollY+innerHeight>mainEl.offsetTop+220):(scrollY>innerHeight*0.9);
+    if(showFab!==fabOn){fabOn=showFab;fabEl.classList.toggle('on',showFab);}}
+},{passive:true});
+
+/* ============================================================
+   10. the one interactive moment: press and hold to light the shop
+   ============================================================ */
+var shop=document.getElementById('shop');
+var counterEl=document.getElementById('counter');
+var holdHint=document.getElementById('holdHint');
+var demoSection=document.getElementById('prova');
+var hold=0,holding=false,holdRaf=null,holdLast=0,lastCount=-1,holdDone=false;
+
+function paintHold(){
+  shop.style.setProperty('--h',hold.toFixed(3));
+  shop.style.setProperty('--hb',clamp((hold-0.42)/0.58,0,1).toFixed(3));
+  demoSection.style.setProperty('--h',hold.toFixed(3));
+  var n=Math.round(hold*47);
+  if(n!==lastCount){lastCount=n;counterEl.textContent=n;}
+  if(hold>=1&&!holdDone){
+    holdDone=true;
+    shop.classList.add('done');
+    holdHint.textContent='Vetrina accesa';
+    demoSection.classList.add('hold-done');
+  }
+}
+function holdTick(now){
+  var dt=Math.min(64,now-(holdLast||now));holdLast=now;
+  if(holdDone){hold=1;}else{hold=clamp(hold+(holding?dt/1500:-dt/1100),0,1);}
+  paintHold();
+  if(!holdDone&&((holding&&hold<1)||(!holding&&hold>0)))holdRaf=requestAnimationFrame(holdTick);
+  else{holdRaf=null;holdLast=0;}
+}
+function startHold(e){
+  if(reduce.matches)return;
+  if(e&&e.cancelable)e.preventDefault();
+  holding=true;if(holdRaf===null)holdRaf=requestAnimationFrame(holdTick);
+}
+function endHold(){holding=false;if(holdRaf===null)holdRaf=requestAnimationFrame(holdTick);}
+shop.addEventListener('pointerdown',startHold);
+addEventListener('pointerup',endHold);
+addEventListener('pointercancel',endHold);
+shop.addEventListener('keydown',function(e){
+  if(e.key===' '||e.key==='Enter'){e.preventDefault();startHold();}
+});
+shop.addEventListener('keyup',function(e){
+  if(e.key===' '||e.key==='Enter')endHold();
+});
+shop.addEventListener('contextmenu',function(e){e.preventDefault();});
+
+/* ============================================================
+   11. reduced motion, honored live in both directions
+   ============================================================ */
+function pinToFinalStates(){
+  sections.forEach(function(s){s.classList.add('in','done');});
+  document.getElementById('navlogo').classList.add('drawn');
+  [].slice.call(document.querySelectorAll('footer .logo')).forEach(function(l){l.classList.add('drawn');});
+  [].slice.call(document.querySelectorAll('.divider path')).forEach(function(p){p.style.strokeDashoffset=0;});
+  hold=1;holding=false;
+  if(holdRaf!==null){cancelAnimationFrame(holdRaf);holdRaf=null;}
+  paintHold();
+}
+function unpinFinalStates(){
+  if(reduce.matches)return;
+  holdDone=false;hold=0;holding=false;lastCount=-1;
+  shop.classList.remove('done');
+  demoSection.classList.remove('hold-done');
+  holdHint.textContent='Tieni premuto per accendere';
+  paintHold();
+}
+reduce.addEventListener('change',function(e){
+  if(e.matches)pinToFinalStates();
+  else applyHeroMode();
+});
+if(reduce.matches)pinToFinalStates();
+
+/* ============================================================
+   12. pause every animation on a hidden tab
+   ============================================================ */
+var pauseStyle=document.createElement('style');
+pauseStyle.textContent='body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused !important}';
+document.head.appendChild(pauseStyle);
+document.addEventListener('visibilitychange',function(){
+  document.body.classList.toggle('paused',document.hidden);
+});
+
+
+
+/* ============================================================
+   14. arm everything
+   ============================================================ */
+var geoTimer=null;
+addEventListener('resize',function(){clearTimeout(geoTimer);geoTimer=setTimeout(function(){measureGeo();onScroll();},150);});
+addEventListener('load',function(){measureGeo();onScroll();});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){measureGeo();});}
+measureGeo();
+applyHeroMode();
+updateRail(performance.now());
+
+})();
+</script>
+</body>
+</html>
